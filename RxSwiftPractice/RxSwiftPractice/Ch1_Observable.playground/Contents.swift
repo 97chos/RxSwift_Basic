@@ -138,7 +138,7 @@ do {
         .disposed(by: disposeBag)
 
     // MARK: - Maybe
-    // Single과 다르게 complete 되더라도 onNext 이벤트를 방출하지 않을 수 있음
+    // Single과 다르게 complete 되더라도 onNext 이벤트를 방출하지 않을 수 있음 (선택 사항)
     // success, .completed, .error
 
     // MARK: - Completable

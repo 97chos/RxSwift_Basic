@@ -34,7 +34,7 @@ do {
 
     subscription2.dispose()
 
-    subject                             // subject를 종료한 이후 이므로 .completed 값만 리턴됨
+    subject                             // subject를 종료한 이후이므로 .completed 값만 리턴됨
         .subscribe {
             print("3rd: ",$0)
         }
@@ -64,7 +64,7 @@ do {
 
     subject2
         .subscribe{
-            print("1st: ",$0)
+            print("2nd: ",$0)
         }
         .disposed(by: disposeBag)
 
@@ -72,7 +72,7 @@ do {
 
     subject2
         .subscribe{
-            print("2nd: ",$0)
+            print("3rd: ",$0)
         }
         .disposed(by: disposeBag)
 
