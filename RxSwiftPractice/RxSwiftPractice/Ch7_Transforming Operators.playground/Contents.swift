@@ -70,7 +70,7 @@ do {
     let student = PublishSubject<Student>()
 
     student
-        .flatMap{ $0.score }                // 오리지널 시퀀스에서 새로운 시퀀스 생성, 해당 시퀀스에서 발생한 이벤트를 전달
+        .flatMap{ $0.score }         // 오리지널 시퀀스에서 새로운 시퀀스 생성,해당 value에 변동이 있으면 발생한 이벤트를 전달
         .subscribe(onNext: {
             print($0)
         })
@@ -79,6 +79,7 @@ do {
     student.onNext(ryan)
 
     ryan.score.onNext(85)
+    charlotte.score.onNext(70)
 
     student.onNext(charlotte)
 
@@ -88,6 +89,8 @@ do {
 
     //MARK: - flatMapLatest
     // flatmap에서 가장 최신의 값만을 트래킹하고 싶을 때 사용
+    // 가장 최근에 전달된 Observable의 Element 값만 트래킹하고, 이전의 값들은 모두 구독해지하고 무시
+    // 네트워킹 조작에서 흔히 사용, 사전 검색 시 각 스펠링을 입력할 때마다 이전에 노출되던 값들은 모두 지워지고, 새로은 검색값만 노출될 때
     print("====================flatMapLatest")
 
     student
@@ -105,7 +108,46 @@ do {
     ryan.score.onNext(95)
     charlotte.score.onNext(100)
 
-    
+    student.onNext(ryan)
+    charlotte.score.onNext(130)
+}
 
+//MARK: - 이벤트 관찰하기
+do {
+    print("====================ObserverEvent")
 
+    enum MYyrror: Error {
+        case anError
+    }
+
+    struct Student {
+        var score: BehaviorSubject<Int>
+    }
+
+    let ryan = Student(score: BehaviorSubject(value: 80))
+    let charlotte = Student(score: BehaviorSubject(value: 100))
+
+    let student = BehaviorSubject(value: ryan)
+
+    let studentScore = student
+        .flatMapLatest{ $0.score.materialize() }
+
+    studentScore
+        .filter {
+            guard $0.error == nil else {
+                print($0)
+                return false
+            }
+            return true
+        }
+        .subscribe(onNext: {
+            print($0)
+        })
+        .disposed(by: disposeBag)
+
+    ryan.score.onNext(85)
+    ryan.score.onError(MYyrror.anError)
+    ryan.score.onNext(90)
+
+    student.onNext(charlotte)
 }

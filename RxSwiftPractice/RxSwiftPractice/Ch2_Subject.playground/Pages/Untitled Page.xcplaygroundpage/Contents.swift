@@ -32,7 +32,7 @@ do {
     subject.onCompleted()               // subject(Observable) 종료
     subject.onNext("5")
 
-    subscription2.dispose()
+    subscription2.dispose() 
 
     subject                             // subject를 종료한 이후이므로 .completed 값만 리턴됨
         .subscribe {
@@ -55,9 +55,9 @@ do {
     let subject2 = BehaviorSubject(value: "initial Value")
 
     subject2
-        .subscribe{
-            print("1st: ", $0)
-        }
+        .subscribe(onNext: {
+            print($0)
+        })
         .disposed(by: disposeBag)
 
     subject2.onNext("X")
@@ -122,7 +122,7 @@ do {
 
     variable.value = "New initail value"
 
-    variable.asObservable()                         // asObservable을 호출하여 subject처럼 읽힐 수 있도록 설정
+    variable.asObservable()                         // asObservable을 호출하여 Observable처럼 읽힐 수 있도록 설정
         .subscribe{
             print("1st: ", $0)
         }
