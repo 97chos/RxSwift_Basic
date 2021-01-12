@@ -38,6 +38,7 @@
 		FFBC8AC125A6CD6500C4DD02 /* pic4 2.01.31.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pic4 2.01.31.png"; path = "../../../../pic4 2.01.31.png"; sourceTree = "<group>"; };
 		FFBC8AC225A6CD6500C4DD02 /* pic1 */ = {isa = PBXFileReference; lastKnownFileType = file; name = pic1; path = ../../../../pic1; sourceTree = "<group>"; };
 		FFBC8ACA25A6D6E100C4DD02 /* Ch5_Filtering Operators.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "Ch5_Filtering Operators.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		FFD344E825AC498200889514 /* Ch9_Combining Operators.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "Ch9_Combining Operators.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +93,7 @@
 				FFBC8A9525A558CE00C4DD02 /* Ch2_Subject.playground */,
 				FFBC8ACA25A6D6E100C4DD02 /* Ch5_Filtering Operators.playground */,
 				FF244E5425A6FF5F004B0A70 /* Ch7_Transforming Operators.playground */,
+				FFD344E825AC498200889514 /* Ch9_Combining Operators.playground */,
 			);
 			path = RxSwiftPractice;
 			sourceTree = "<group>";
