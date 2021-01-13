@@ -31,6 +31,7 @@
 		AB0FC717E6E52D4EC25737A3 /* Pods-RxSwiftPractice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftPractice.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwiftPractice/Pods-RxSwiftPractice.release.xcconfig"; sourceTree = "<group>"; };
 		E98A2DB3C00F5780F917E5BA /* Pods-RxSwiftPractice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftPractice.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwiftPractice/Pods-RxSwiftPractice.debug.xcconfig"; sourceTree = "<group>"; };
 		FF244E5425A6FF5F004B0A70 /* Ch7_Transforming Operators.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "Ch7_Transforming Operators.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		FF98F3D625AF40FD00B79EE3 /* Ch11_TimeBased_Operators.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Ch11_TimeBased_Operators.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		FFBC8A9525A558CE00C4DD02 /* Ch2_Subject.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Ch2_Subject.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		FFBC8A9925A5593100C4DD02 /* Ch1_Observable.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Ch1_Observable.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		FFBC8ABF25A6CD6400C4DD02 /* pic3 1.59.28.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pic3 1.59.28.png"; path = "../../../../pic3 1.59.28.png"; sourceTree = "<group>"; };
@@ -94,6 +95,7 @@
 				FFBC8ACA25A6D6E100C4DD02 /* Ch5_Filtering Operators.playground */,
 				FF244E5425A6FF5F004B0A70 /* Ch7_Transforming Operators.playground */,
 				FFD344E825AC498200889514 /* Ch9_Combining Operators.playground */,
+				FF98F3D625AF40FD00B79EE3 /* Ch11_TimeBased_Operators.playground */,
 			);
 			path = RxSwiftPractice;
 			sourceTree = "<group>";
