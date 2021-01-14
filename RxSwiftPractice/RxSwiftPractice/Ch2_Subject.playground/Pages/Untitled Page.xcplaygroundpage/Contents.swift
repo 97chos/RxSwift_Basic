@@ -118,9 +118,10 @@ do {
 
     print("========================Variables")
 
-    let variable = Variable("Initail Value")
+    let variable = BehaviorRelay(value: "Initail Value")
 
-    variable.value = "New initail value"
+    //variable.value = "New initail value"
+    variable.accept("New initail value")
 
     variable.asObservable()                         // asObservable을 호출하여 Observable처럼 읽힐 수 있도록 설정
         .subscribe{
@@ -129,7 +130,8 @@ do {
         .disposed(by: disposeBag)
 
 
-    variable.value = "1"
+    // variable.value = "1"
+  variable.accept("1")
 
     variable.asObservable()
         .subscribe {
@@ -137,8 +139,8 @@ do {
         }
         .disposed(by: disposeBag)
 
-    variable.value = "2"
-
+    // variable.value = "2"
+  variable.accept("2")
 }
 
 

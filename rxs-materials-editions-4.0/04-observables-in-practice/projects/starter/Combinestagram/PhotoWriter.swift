@@ -33,11 +33,21 @@
 import Foundation
 import UIKit
 import Photos
+import RxSwift
 
 class PhotoWriter {
   enum Errors: Error {
     case couldNotSavePhoto
   }
 
+  static func save(_ image: UIImage) -> Observable<String> {
+    return Observable.create({ observer in
+
+      var savedAssetId: String?
+      PHPhotoLibrary.shared().performChanges({
+        
+      }, completionHandler: <#T##((Bool, Error?) -> Void)?##((Bool, Error?) -> Void)?##(Bool, Error?) -> Void#>)
+    })
+  }
 
 }

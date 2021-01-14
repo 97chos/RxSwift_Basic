@@ -41,12 +41,37 @@ class MainViewController: UIViewController {
   @IBOutlet weak var buttonSave: UIButton!
   @IBOutlet weak var itemAdd: UIBarButtonItem!
 
+  private let bag = DisposeBag()
+  private let images = Variable<[UIImage]>([])
+
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    images.asObservable()
+      .subscribe(onNext: { [weak self] photos in
+        guard let preview = self?.imagePreview else { return }
+        for case let photo in photos {
+          preview.image = photo
+        }
+      })
+
+    images.asObservable()
+      .subscribe(onNext: { [weak self] photos in
+        self?.updateUI(photos: photos)
+      })
+      .disposed(by: bag)
+
+  }
+
+  private func updateUI(photos: [UIImage]) {
+    buttonSave.isEnabled = photos.count > 0 && photos.count % 2 == 0
+    buttonClear.isEnabled = photos.count > 0
+    itemAdd.isEnabled = photos.count < 6
+    title = photos.count > 0 ? "\(photos.count) photos" : "collage"
   }
   
   @IBAction func actionClear() {
+    images.value = []
 
   }
 
@@ -55,7 +80,19 @@ class MainViewController: UIViewController {
   }
 
   @IBAction func actionAdd() {
+    if #available(iOS 13.0, *) {
+      let photosViewController = storyboard?.instantiateViewController(identifier: "PhotosViewController") as! PhotosViewController
+      navigationController?.pushViewController(photosViewController, animated: true)
 
+      photosViewController.selectedPhotos
+        .subscribe(onNext: { [weak self] newImage in
+          guard let images = self?.images else { return }
+          images.value.append(newImage)
+        }, onDisposed: {
+          print("completed photo selection")
+        })
+        .disposed(by: bag)
+    }
   }
 
   func showMessage(_ title: String, description: String? = nil) {

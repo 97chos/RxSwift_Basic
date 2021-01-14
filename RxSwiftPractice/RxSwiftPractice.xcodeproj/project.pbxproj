@@ -31,6 +31,7 @@
 		AB0FC717E6E52D4EC25737A3 /* Pods-RxSwiftPractice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftPractice.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwiftPractice/Pods-RxSwiftPractice.release.xcconfig"; sourceTree = "<group>"; };
 		E98A2DB3C00F5780F917E5BA /* Pods-RxSwiftPractice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftPractice.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwiftPractice/Pods-RxSwiftPractice.debug.xcconfig"; sourceTree = "<group>"; };
 		FF244E5425A6FF5F004B0A70 /* Ch7_Transforming Operators.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "Ch7_Transforming Operators.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		FF553AF725B0146900FDEFF6 /* temp.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = temp.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		FF98F3D625AF40FD00B79EE3 /* Ch11_TimeBased_Operators.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Ch11_TimeBased_Operators.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		FF98F3D825AF448600B79EE3 /* Ch12_BeginningRxCocoa.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Ch12_BeginningRxCocoa.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		FFBC8A9525A558CE00C4DD02 /* Ch2_Subject.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Ch2_Subject.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -98,6 +99,7 @@
 				FFD344E825AC498200889514 /* Ch9_Combining Operators.playground */,
 				FF98F3D625AF40FD00B79EE3 /* Ch11_TimeBased_Operators.playground */,
 				FF98F3D825AF448600B79EE3 /* Ch12_BeginningRxCocoa.playground */,
+				FF553AF725B0146900FDEFF6 /* temp.playground */,
 			);
 			path = RxSwiftPractice;
 			sourceTree = "<group>";

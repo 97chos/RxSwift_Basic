@@ -117,7 +117,7 @@ class ActivityController: UITableViewController {
     
     response
       .filter { response, _ in
-        return 200..<400 ~= response.statusCode
+        return 200..<400 != response.statusCode
       }
       .flatMap { response, _ -> Observable<String> in
         guard let value = response.allHeaderFields["Last-Modified"] as? String else {
