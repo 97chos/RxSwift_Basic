@@ -30,3 +30,19 @@ numbers
   }, onCompleted: {
     print("-------")
   }).dispose()
+
+let arr = BehaviorSubject<[Int]>(value: [1,2,3,4,5])
+
+arr
+  .map{
+    $0.map {
+      $0 + 1
+    }
+  }
+  .subscribe(onNext: {
+    print($0)
+  })
+
+let arr2 = [1,2,3,4,5]
+
+print(arr2.map{ $0 + 1 })
