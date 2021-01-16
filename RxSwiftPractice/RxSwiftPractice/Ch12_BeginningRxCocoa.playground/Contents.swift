@@ -1,4 +1,4 @@
 import UIKit
 
 
-var str = "master commit1"
+var str = "master commit A"
