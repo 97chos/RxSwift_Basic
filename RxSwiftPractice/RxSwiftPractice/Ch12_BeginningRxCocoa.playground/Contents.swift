@@ -1,4 +1,4 @@
 import UIKit
 
 
-var str = "Hello, playground"
+var str = "master commit"
